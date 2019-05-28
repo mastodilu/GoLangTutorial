@@ -11,4 +11,9 @@ func main() {
 	fmt.Printf("%x\n", x)  // esadecimale
 	fmt.Printf("%#x\n", x) // 0xEsadecimale
 	fmt.Printf("%v\n", x)  // valore normale
+
+	/*
+		%v	the value in a default format
+		when printing structs, the plus flag (%+v) adds field names
+	*/
 }
