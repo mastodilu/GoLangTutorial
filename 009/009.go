@@ -6,7 +6,7 @@ import (
 
 /*
 	iota è una keyword riservata dispobibile all'interno di "const parentetizzato"
-	che si incrementa di 1 rispetto al precedente iota, e comincia da 0.
+	che si incrementa di 1 ad ogni nuovo 'ConstSpec', e comincia da 0.
 */
 
 const (
