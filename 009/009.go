@@ -46,4 +46,17 @@ func main() {
 
 	fmt.Printf("%v\n", nb1)
 	fmt.Printf("%v\n", nb2)
+
+	// -----------------
+	fmt.Println()
+
+	fmt.Printf("%T\n", a)
+	fmt.Printf("%T\n", b)
+	fmt.Printf("%T\n", c)
+	fmt.Printf("%T\n", d)
+	fmt.Printf("%T\n", e)
+	fmt.Printf("%T\n", f)
+	fmt.Printf("%T\n", g)
+	fmt.Printf("%T\n", nb1)
+	fmt.Printf("%T\n", nb2)
 }
