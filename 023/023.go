@@ -24,4 +24,13 @@ func main() {
 
 	v, ok = numbers["two"]
 	fmt.Println("two", v, ok)
+
+	// aggiunge alla mappa
+	numbers["three"] = 3
+	v, ok = numbers["three"]
+	fmt.Println("three", v, ok)
+
+	for k, v := range numbers {
+		fmt.Println(k, "\t", v)
+	}
 }
