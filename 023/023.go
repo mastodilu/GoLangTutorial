@@ -33,4 +33,11 @@ func main() {
 	for k, v := range numbers {
 		fmt.Println(k, "\t", v)
 	}
+
+	//delete "comma, ok idiom" ( _, ok = ...)
+	fmt.Println("one:", numbers["one"])
+	delete(numbers, "one")
+	_, ok = numbers["one"]
+	fmt.Println("deleting \"one\"..., \"one\" is still there: ", ok)
+
 }
