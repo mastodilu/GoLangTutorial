@@ -34,7 +34,7 @@ func main() {
 		fmt.Println(k, "\t", v)
 	}
 
-	//delete "comma, ok idiom" ( _, ok = ...)
+	//delete "comma, ok" idiom ( _, ok = ...)
 	fmt.Println("one:", numbers["one"])
 	delete(numbers, "one")
 	_, ok = numbers["one"]
