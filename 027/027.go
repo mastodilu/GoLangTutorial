@@ -11,9 +11,8 @@ type person struct {
 }
 
 type secretAgent struct {
-	licenseToKill bool
-	// prs           person
-	person // se il nome della struct e il tipo coincidono allora non serve specificarlo due volte
+	licenseToKill bool // campi dichiarati esplicitamente
+	person             // 💥 campi dichiarati implicitamente: se il nome della struct e il tipo coincidono allora non serve specificarlo due volte
 }
 
 func main() {
@@ -30,4 +29,19 @@ func main() {
 	if jamesBond.licenseToKill {
 		fmt.Println("and is licensed to kill.")
 	}
+
+	// 💥 esempio di "promoted fields"
+	// accedo ai campi della struct interna come se appartenessero alla struct esterna
+	// ma funziona solo così, non in fase di creazione della variabile
+	/* errore:
+	matteo := secretAgent{
+		licenseToKill: false,
+		first: ... //ERRORE
+	}
+	*/
+	fmt.Print(jamesBond.first, " ", jamesBond.last, " is ", jamesBond.age)
+	if jamesBond.licenseToKill {
+		fmt.Print(" and licensed to kill")
+	}
+	fmt.Println(".")
 }
