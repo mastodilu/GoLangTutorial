@@ -20,6 +20,7 @@ func factorial(n int) int {
 }
 
 func main() {
+	// 💥 recursion
 	fmt.Println("factorial 10:", factorial(10))
 	fmt.Println("factorial 10:", factorialNonRecursive(10))
 }
