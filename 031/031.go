@@ -5,6 +5,7 @@ import (
 )
 
 func sumAll(numbers ...int) int {
+	// se numbers ha lunghezza zero, allora è nil e non viene creato lo slice
 	sum := 0
 	for _, n := range numbers {
 		sum += n
