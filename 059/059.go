@@ -32,12 +32,26 @@ func sendOutputToLogFile() {
 	fmt.Println("Check the log file.")
 }
 
+func sayHi() {
+	fmt.Println("Hi!")
+}
+
 func tryLogFatal() {
+	defer sayHi()
 	_, err := os.Open("delete-me.txt")
 	if err != nil {
-		// stampa nel log e termina
+		// stampa nel log e termina la goroutine
 		// 💥 senza nemmeno chiamare le defer
 		log.Fatal("File can't be opened.")
+	}
+}
+
+func tryLogPanic() {
+	defer sayHi()
+	_, err := os.Open("delete-me.txt")
+	if err != nil {
+		// stampa nel log e termina la goroutine
+		log.Panic("File can't be opened.")
 	}
 }
 
@@ -48,5 +62,9 @@ func main() {
 
 	sendOutputToLogFile() // 💥
 
+	tryLogPanic() // 💥
+
 	tryLogFatal() // 💥
+
+	fmt.Println("BYE")
 }

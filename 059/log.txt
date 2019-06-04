@@ -1,1 +1,1 @@
-2019/06/04 17:13:17 File can't be opened. open delete-me.txt: Impossibile trovare il file specificato.
+2019/06/04 17:19:34 File can't be opened. open delete-me.txt: Impossibile trovare il file specificato.
