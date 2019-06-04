@@ -28,6 +28,17 @@ func sendOutputToLogFile() {
 		log.Println("File can't be opened.", err)
 	}
 	defer file.Close()
+
+	fmt.Println("Check the log file.")
+}
+
+func tryLogFatal() {
+	_, err := os.Open("delete-me.txt")
+	if err != nil {
+		// stampa nel log e termina
+		// 💥 senza nemmeno chiamare le defer
+		log.Fatal("File can't be opened.")
+	}
 }
 
 func main() {
@@ -36,4 +47,6 @@ func main() {
 	tryLog()
 
 	sendOutputToLogFile() // 💥
+
+	tryLogFatal() // 💥
 }
