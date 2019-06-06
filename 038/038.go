@@ -31,6 +31,17 @@ func even(f func(xi ...int) int, vi ...int) int {
 	return f(yi...)
 }
 
+// numeri dispari
+func odd(f func(xi ...int) int, yi ...int) int {
+	numbers := []int{}
+	for _, v := range yi {
+		if v%2 == 1 {
+			numbers = append(numbers, v)
+		}
+	}
+	return f(numbers...)
+}
+
 func main() {
 	reviewOldStuff()
 
@@ -58,5 +69,8 @@ func main() {
 	numbers := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 	total = sum(numbers...)
 	s := even(sum, numbers...)
+	fmt.Println(s)
+
+	s = odd(sum, numbers...)
 	fmt.Println(s)
 }
